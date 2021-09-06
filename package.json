@@ -1,0 +1,61 @@
+{
+  "name": "gatsby-starter-event-calendar",
+  "version": "1.0.0",
+  "description": "A customizable calendar event starter for Gatsby integrated with Google Spreadsheet",
+  "author": "Ema Suriano <emanuel.suriano@gmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "yarn develop",
+    "lint": "eslint --ext .ts,.tsx src",
+    "ts-check": "tsc"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
+    "babel-runtime": "^6.26.0",
+    "date-fns": "^2.23.0",
+    "dotenv": "^10.0.0",
+    "gatsby": "^3.13.0",
+    "gatsby-plugin-manifest": "^3.13.0",
+    "gatsby-plugin-react-helmet": "^4.13.0",
+    "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-plugin-styled-components": "^4.13.0",
+    "gatsby-plugin-typescript": "^3.13.0",
+    "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-source-google-spreadsheets": "^3.0.8",
+    "gatsby-transformer-sharp": "^3.13.0",
+    "grommet": "^2.17.5",
+    "grommet-icons": "^4.6.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-github-corner": "^2.5.0",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.2",
+    "@types/styled-components": "^5.1.14",
+    "@types/uuid": "^8.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.2"
+  },
+  "keywords": [
+    "gatsby",
+    "calendar",
+    "events",
+    "google spreadsheet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmaSuriano/gatsby-starter-event-calendar.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmaSuriano/gatsby-starter-event-calendar/issues"
+  },
+  "homepage": "https://github.com/EmaSuriano/gatsby-starter-event-calendar#readme"
+}

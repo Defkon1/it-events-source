@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "lib",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "skipLibCheck": true,
+    "types": ["./src/types"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "public", ".cache"]
+}

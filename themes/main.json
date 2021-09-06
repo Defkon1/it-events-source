@@ -1,0 +1,48 @@
+{
+  "background": "linear-gradient(to right bottom, #d22780, #b82283, #9b2085, #7e2183, #5e227f)",
+  "brand": "#1fe5bd",
+  "secondary": "#41a7b3",
+  "focus": "#1fe5bd",
+  "text": "#fff",
+  "border": "#fff",
+
+  "calendar": {
+    "today": {
+      "background": "#9af1daCC",
+      "text": "#fff",
+      "border": "#fff"
+    },
+    "day": {
+      "background": "#ffffffaa",
+      "text": "#333",
+      "border": "#fff"
+    },
+    "past": {
+      "background": "#ffffff66",
+      "text": "#333",
+      "border": "#fff"
+    },
+    "empty": {
+      "background": "transparent",
+      "border": "#fff"
+    },
+    "weekdays": {
+      "background": "#ffffff22",
+      "border": "#fff",
+      "text": "#fff"
+    },
+    "event": {
+      "background": "#1fe5bdCC",
+      "text": "#fff"
+    },
+    "past-event": {
+      "background": "#666",
+      "text": "#fff"
+    },
+    "modal": {
+      "text": "#333",
+      "separator": "#666",
+      "background": "#fff"
+    }
+  }
+}

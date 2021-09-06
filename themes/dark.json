@@ -1,0 +1,46 @@
+{
+  "background": "#00005c",
+  "brand": "#6a097d",
+  "secondary": "#c060a1",
+  "focus": "#c060a1",
+  "text": "#ffdcb4",
+  "border": "#ffdcb4",
+
+  "calendar": {
+    "today": {
+      "background": "#c060a1",
+      "text": "#ffdcb4",
+      "border": "#ffdcb4"
+    },
+    "day": {
+      "background": "#6a097d",
+      "text": "#ffdcb4",
+      "border": "#ffdcb4"
+    },
+    "past": {
+      "background": "#33334b",
+      "text": "#ffdcb4",
+      "border": "#ffdcb4"
+    },
+    "empty": {
+      "border": "#ffdcb4"
+    },
+    "weekdays": {
+      "background": "#6a097d",
+      "text": "#ffdcb4",
+      "border": "#ffdcb4"
+    },
+    "event": {
+      "background": "white",
+      "text": "black"
+    },
+    "past-event": {
+      "background": "grey",
+      "text": "#ffdcb4"
+    },
+    "modal": {
+      "text": "black",
+      "background": "white"
+    }
+  }
+}
