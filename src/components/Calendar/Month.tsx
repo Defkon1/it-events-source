@@ -1,5 +1,6 @@
 import React from 'react';
 import { getDaysInMonth, getISODay, format } from 'date-fns';
+import { it } from 'date-fns/locale';
 import { Heading, Box } from 'grommet';
 import Day from './Day';
 import EmptyDays from './EmptyDays';
@@ -22,10 +23,10 @@ const Month = ({ events, startDate, openModal }: Props) => {
   return (
     <Box margin="medium">
       <Heading
-        a11yTitle={`Month of ${format(startDate, 'MMMM yyyy')}`}
+        a11yTitle={`Mese di ${format(startDate, 'MMMM yyyy', { locale: it })}`}
         color="text"
       >
-        <b>{`${format(startDate, 'MMMM')} `}</b>
+        <MonthHeading>{`${format(startDate, 'LLLL', { locale: it })} `}</MonthHeading>
         {format(startDate, 'yyyy')}
       </Heading>
       <MonthContainer>
@@ -61,5 +62,10 @@ const MonthContainer = styled.div`
   border-radius: 12px;
   border: 4px ${(props) => props.theme.global.colors.border} solid;
 `;
+
+const MonthHeading = styled.b`
+  text-transform: capitalize;
+`;
+
 
 export default React.memo(Month);

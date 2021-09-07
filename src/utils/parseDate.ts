@@ -1,5 +1,4 @@
 import { parse } from 'date-fns';
+import { it } from 'date-fns/locale';
 
-const DATE_FORMAT = 'MM/dd/yyyy';
-
-export const parseEventDate = (date: string) => parse(date, DATE_FORMAT, 0);
+ export const parseEventDate = (date: string) => parse(date, 'yyyy-MM-dd HH:mm:ss', 0, { locale: it });

@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const NotFoundPage = () => (
   <Layout>
     <Box
-      a11yTitle="Calendar events title"
+      a11yTitle="Eventi informatici italiani"
       align="center"
       flex="grow"
       height="100vh"
@@ -16,13 +16,13 @@ const NotFoundPage = () => (
       <Heading size="xlarge" margin="small">
         404
       </Heading>
-      <Heading size="small">Oops, Sorry we can&#39;t find the page</Heading>
+      <Heading size="small">Pagina non trovata</Heading>
 
       <Button
         primary
         margin="large"
         href="/"
-        label={<Text margin="small">Go back to HomePage</Text>}
+        label={<Text margin="small">Torna alla home</Text>}
       />
     </Box>
   </Layout>

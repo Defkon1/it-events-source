@@ -47,11 +47,11 @@ type DayProps = { date: Date; type: string };
 
 const RowDay = ({ date, type }: DayProps) => (
   <Box width="xsmall">
-    <Text color={`calendar-${type}-text`} size="large" a11yTitle="Day number">
+    <Text color={`calendar-${type}-text`} size="large" a11yTitle="Numero giorno">
       {format(date, 'dd')}
     </Text>
 
-    <Text color={`calendar-${type}-text`} size="small" a11yTitle="Day">
+    <Text color={`calendar-${type}-text`} size="small" a11yTitle="Giorno">
       {format(date, 'cccc')}
     </Text>
   </Box>
@@ -62,7 +62,7 @@ const CalendarDay = ({ date, type }: DayProps) => (
     color={`calendar-${type}-text`}
     type={type}
     size="large"
-    a11yTitle="Day number"
+    a11yTitle="Numero giorno"
     textAlign="end"
   >
     {format(date, 'dd')}

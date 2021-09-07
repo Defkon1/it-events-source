@@ -16,9 +16,6 @@ const getEnv = (env, key) => {
 
 const { theme, spreadsheetLink, ...siteMetadata } = appConfig;
 
-const spreadsheetId =
-  spreadsheetLink.split('/')[spreadsheetLink.split('/').length - 2];
-
 module.exports = {
   siteMetadata,
   plugins: [
@@ -26,36 +23,27 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
-      resolve: 'gatsby-source-google-spreadsheets',
-      options: {
-        spreadsheetId,
-        credentials: {
-          type: 'service_account',
-          project_id: getEnv(process.env, 'PROJECT_ID'),
-          private_key_id: getEnv(process.env, 'PRIVATE_KEY_ID'),
-          private_key: getEnv(process.env, 'PRIVATE_KEY').replace(
-            /(\\r)|(\\n)/g,
-            '\n',
-          ),
-          client_email: getEnv(process.env, 'CLIENT_EMAIL'),
-          client_id: '',
-          auth_uri: 'https://accounts.google.com/o/oauth2/auth',
-          token_uri: 'https://oauth2.googleapis.com/token',
-          auth_provider_x509_cert_url:
-            'https://www.googleapis.com/oauth2/v1/certs',
-          client_x509_cert_url: `https://www.googleapis.com/robot/v1/metadata/x509/${getEnv(
-            process.env,
-            'CLIENT_EMAIL',
-          )}`,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/media`,
       },
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `events-repo`,
+        remote: getEnv(process.env, 'EVENTS_REPO'),
+        branch: `main`,
+        patterns: `events/*.csv`,
+        local: `${__dirname}/data`,
+      }
+    },    
+    {
+      resolve: 'gatsby-transformer-csv',
+      options:{
+        delimiter: ','
+      }
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

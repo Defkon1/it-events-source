@@ -1,9 +1,11 @@
 type EventInfo = {
   id: string;
-  eventName: string;
+  name: string;
+  description: string;
   date: string;
-  eventLink: string;
-  place: string;
+  link: string;
+  tags: string;
+  location: string;
 };
 
 type ModalData = {

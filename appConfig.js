@@ -1,9 +1,7 @@
 module.exports = {
-  title: 'Gatsby Starter Event Calendar',
-  subTitle: 'The easiest option to share events!',
+  title: 'Eventi informatici italiani',
+  subTitle: 'Una lista curata di eventi informatici live e online per sviluppatori, designer e tech enthusiasts organizzati in giro per l&apos;Italia.',
   limitMonthInTheFuture: 4,
-  formLink: 'https://forms.gle/5Kv3XKJBA5g5FWRC7',
-  spreadsheetLink:
-    'https://docs.google.com/spreadsheets/d/1e6mNWZZLuBBFk2c-zGRSSh8g5mqoQUPbW78NmA_EI88/edit?usp=sharing',
-  theme: require('./themes/main.json'),
+  repoLink: 'https://github.com/Defkon1/it-events.git',
+  theme: require('./themes/dfk-green.json'),
 };

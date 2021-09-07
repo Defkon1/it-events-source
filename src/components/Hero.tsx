@@ -1,7 +1,16 @@
 import React, { useContext } from 'react';
-import { Box, Heading, Button, Image, ResponsiveContext } from 'grommet';
+import {
+  Box,
+  Heading,
+  Button,
+  ResponsiveContext,
+  Text,
+  Anchor,
+  Avatar,
+} from 'grommet';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
+import { Github } from 'grommet-icons';
 
 const METADATA_QUERY = graphql`
   query {
@@ -9,7 +18,7 @@ const METADATA_QUERY = graphql`
       siteMetadata {
         title
         subTitle
-        formLink
+        repoLink
       }
     }
     imageSharp {
@@ -24,60 +33,139 @@ const Hero = () => {
   const data = useStaticQuery(METADATA_QUERY);
   const size = useContext(ResponsiveContext);
 
-  const { title, subTitle, formLink } = data.site.siteMetadata;
-  const { src: logoSrc } = data.imageSharp.original;
+  const { title, repoLink } = data.site.siteMetadata;
 
   return (
-    <Box
-      a11yTitle="Calendar events title"
-      align="center"
-      flex="grow"
-      height="100vh"
-      justify="center"
-      pad="medium"
-      animation="slideDown"
-    >
-      <Box width="small" height="small">
-        <Image fit="contain" src={logoSrc} a11yTitle="logo" />
+    <Box a11yTitle="Eventi informatici italiani" width="100%">
+      <Box
+        tag="header"
+        direction="row"
+        align="center"
+        justify="between"
+        background="brand"
+        pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+        elevation="medium"
+        style={{ zIndex: 1 }}
+      >
+        <Heading level="3" margin="none" a11yTitle="Titolo applicazione">
+          {title}
+        </Heading>
+        <Box direction="row" justify="between">
+          <Anchor href="https://www.google.it" a11yTitle="Codice su Github">
+            <Github size="32px" color="text" />
+          </Anchor>
+          &nbsp;
+          <Anchor
+            href="https://alessiomarinelli.it"
+            a11yTitle="Informazioni sull'autore"
+          >
+            <Avatar
+              size="32px"
+              src="//s.gravatar.com/avatar/4d10f56416189bd8f7947edc5908fbe8?s=32"
+            />
+          </Anchor>
+        </Box>
       </Box>
 
-      <Separator />
-
-      <Heading
-        textAlign="center"
-        size="large"
-        a11yTitle="Application title"
-        color="text"
+      <Box
+        align="center"
+        flex="grow"
+        height="90vh"
+        justify="center"
+        pad="medium"
+        animation="slideDown"
       >
-        {title}
-      </Heading>
+        <Box width="large" flex="grow">
+          <Heading size="small" a11yTitle="Informazioni sito" color="brand">
+            Cos&apos;&egrave;?
+          </Heading>
+          <Box
+            border={{
+              color: 'brand',
+              size: 'large',
+              style: 'solid',
+              side: 'left',
+            }}
+            pad="medium"
+          >
+            <Text
+              a11yTitle="Introduzione al sito"
+              weight="normal"
+              size="normal"
+              textAlign="justify"
+              color="text"
+            >
+              Una lista curata di eventi informatici live e online per
+              sviluppatori, designer e tech enthusiasts organizzati in giro per
+              l&apos;Italia.
+            </Text>
 
-      {subTitle && (
-        <Heading
-          textAlign="center"
-          a11yTitle="Application sub title"
-          color="text"
-        >
-          {subTitle}
-        </Heading>
-      )}
+            <Separator spacing="xsmall" />
 
-      <Separator spacing="medium" />
+            <Text
+              a11yTitle="Introduzione al sito"
+              weight="normal"
+              size="normal"
+              textAlign="justify"
+              color="text"
+            >
+              Dallo sviluppo software al design di architetture, passando per
+              approfondimenti legali e soft skill, cercando di abbracciare tutto
+              ciò che ruota intorno all&apos;informatica, al software e alla sua
+              realizzazione.{' '}
+            </Text>
+          </Box>
+        </Box>
 
-      <Box direction={size === 'small' ? 'column' : 'row'} gap="large">
-        <HeroButton
-          href="#calendars"
-          label="See all the events"
-          a11yTitle="See all the events"
-          primary
-        />
-        <HeroButton
-          href={formLink}
-          label="Add your event!"
-          a11yTitle="Add your event!"
-          color="secondary"
-          target="_blank"
-        />
+        <Box width="large" flex="grow">
+          <Heading
+            size="small"
+            a11yTitle="Informazioni sito"
+            color="brand"
+            textAlign="end"
+          >
+            Come segnalare un evento?
+          </Heading>
+          <Box
+            border={{
+              color: 'brand',
+              size: 'large',
+              style: 'solid',
+              side: 'right',
+            }}
+            pad="medium"
+          >
+            <Text
+              a11yTitle="Introduzione al sito"
+              weight="normal"
+              size="normal"
+              textAlign="justify"
+              color="text"
+            >
+              Vai al{' '}
+              <Anchor href={repoLink}>repository GitHub degli eventi</Anchor>, e
+              invia una pull request!
+            </Text>
+          </Box>
+        </Box>
+
+        <Separator spacing="medium" />
+
+        <Box direction={size === 'small' ? 'column' : 'row'} gap="large">
+          <HeroButton
+            href="#calendars"
+            label="Vedi gli eventi"
+            a11yTitle="Vedi gli eventi"
+            primary
+          />
+          <HeroButton
+            href={repoLink}
+            label="Segnala un evento!"
+            a11yTitle="Segnala un evento!"
+            color="secondary"
+            target="_blank"
+          />
+        </Box>
       </Box>
     </Box>
   );

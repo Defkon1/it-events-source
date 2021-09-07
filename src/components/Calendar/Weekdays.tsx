@@ -3,13 +3,13 @@ import { Box, Text } from 'grommet';
 import CalendarBox from './CalendarBox';
 
 const WEEKDAYS = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
+  'Domenica',
+  'Lunedì',
+  'Martedì',
+  'Mercoledì',
+  'Giovedì',
+  'Venerdì',
+  'Sabato',
 ];
 
 const Weekdays = () => (

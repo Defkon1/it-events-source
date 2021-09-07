@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Box } from 'grommet';
 import { graphql, useStaticQuery } from 'gatsby';
-import GithubCorner from '../components/GithubCorner';
 import Footer from '../components/Footer';
 import ModalEvent from '../components/ModalEvent';
 import Month from '../components/Calendar/Month';
@@ -10,35 +9,35 @@ import Layout from '../components/Layout';
 import groupEventsByMonth from '../utils/groupEventsByMonth';
 import { format } from 'date-fns';
 
-// override this query with your own questions!
-const SPREADSHEET_QUERY = graphql`
+const EVENTS_QUERY = graphql`
   query eventsQuery {
     site {
       siteMetadata {
         limitMonthInTheFuture
       }
     }
-    allGoogleEventsSheet {
+    allEventsCsv(sort: { fields: date }) {
       nodes {
         id
-        eventName: whatIsTheName____
-        date: when____
-        eventLink: linkToTheEvent___
-        place: where____
+        date
+        name
+        description
+        location
+        tags
+        link
       }
     }
   }
 `;
-
 const CalendarPage = () => {
   const [modalData, setModalData] = useState<ModalData>();
 
-  const { allGoogleEventsSheet, site } = useStaticQuery(SPREADSHEET_QUERY);
+  const { allEventsCsv, site } = useStaticQuery(EVENTS_QUERY);
   const { limitMonthInTheFuture } = site.siteMetadata;
 
   const months = useMemo(
-    () => groupEventsByMonth(allGoogleEventsSheet.nodes, limitMonthInTheFuture),
-    [allGoogleEventsSheet.nodes, limitMonthInTheFuture],
+    () => groupEventsByMonth(allEventsCsv.nodes, limitMonthInTheFuture),
+    [allEventsCsv.nodes, limitMonthInTheFuture],
   );
 
   return (
@@ -58,7 +57,6 @@ const CalendarPage = () => {
         <ModalEvent onClose={() => setModalData(undefined)} {...modalData} />
       )}
 
-      <GithubCorner href="https://github.com/EmaSuriano/gatsby-starter-event-calendar" />
       <Footer />
     </Layout>
   );

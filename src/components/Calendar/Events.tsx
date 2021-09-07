@@ -38,9 +38,9 @@ const Events = ({ events, hasPast }: Props) => {
               color={
                 hasPast ? 'calendar-past-event-text' : 'calendar-event-text'
               }
-              a11yTitle="Event name"
+              a11yTitle="Nome evento"
             >
-              {event.eventName}
+              {event.name}
             </Text>
           </Box>
         </Box>
@@ -48,7 +48,7 @@ const Events = ({ events, hasPast }: Props) => {
 
       {events.length > MAX_AMOUNT_EVENTS && (
         <Text size="small" truncate weight="bold">
-          {`And ${events.length - MAX_AMOUNT_EVENTS} more ...`}
+          {`Altri ${events.length - MAX_AMOUNT_EVENTS} ...`}
         </Text>
       )}
     </Box>
