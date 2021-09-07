@@ -51,7 +51,7 @@ const Hero = () => {
           {title}
         </Heading>
         <Box direction="row" justify="between">
-          <Anchor href="https://www.google.it" a11yTitle="Codice su Github">
+          <Anchor href="https://github.com/Defkon1/it-events-source" a11yTitle="Codice su Github">
             <Github size="32px" color="text" />
           </Anchor>
           &nbsp;
