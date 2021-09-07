@@ -1,5 +1,7 @@
 # Eventi informatici italiani 📅
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65283fb3-b2e3-45fc-baf9-bfdf7d3ee80d/deploy-status)](https://app.netlify.com/sites/xenodochial-kepler-a72ef6/deploys)
+
 ## [Sito 🎉](https://calendarioeventi.dev/)
 
 Questo repository contiene il codice sorgente del sito web CalendarioEventi.Dev, che presenta una lista curata di eventi informatici live e online per sviluppatori, designer e tech enthusiasts organizzati in giro per l'Italia.
