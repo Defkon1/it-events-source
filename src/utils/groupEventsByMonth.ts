@@ -13,8 +13,14 @@ const removeOldAndFutureEvents = (
   today: Date,
   monthDiff: number,
 ) => {
-  const eventDate = parseEventDate(event.date);
+  let eventDate = new Date(2021, 1, 1);
 
+  try {
+    eventDate = parseEventDate(event.date);
+  } catch (error) {
+    console.log(event.date);
+    eventDate = new Date(2021, 1, 1);
+  }
   if (!isSameMonth(eventDate, today) && isBefore(eventDate, today))
     return false;
   if (differenceInMonths(eventDate, today) >= monthDiff) return false;
