@@ -4,7 +4,7 @@ import { Tag as TagIcon } from 'grommet-icons';
 
 const renderTag = (value: string) => {
   
-  const tagLink = "https://www.amazon.it/?k=" + encodeURI(value) + "&tag=booksitalia-21;
+  const tagLink = "https://www.amazon.it/?k=" + encodeURI(value) + "&tag=booksitalia-21";
   
     return (
     <Box
@@ -17,7 +17,7 @@ const renderTag = (value: string) => {
       margin="xxsmall"
     >
       <TagIcon color="text" style={{ width: '12px', height: '12px' }} />
-      <Text size="small"><Anchor href={tagLink} label={value} /></Text>
+      <Text size="small"><Anchor href={tagLink} label={value} color="white" /></Text>
     </Box>
   );
 };
