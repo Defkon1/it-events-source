@@ -4,7 +4,7 @@ import { Tag as TagIcon } from 'grommet-icons';
 
 const renderTag = (value: string) => {
   
-  const tagLink = "https://www.amazon.it/?k=" + encodeURI(value) + "&tag=" + process.env.AMAZON_TAG;
+  const tagLink = "https://www.amazon.it/?k=" + encodeURI(value) + "&tag=" + process.env.GATSBY_AMAZON_TAG;
   
     return (
     <Box
