@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Text } from 'grommet';
+import { Anchor, Box, Text } from 'grommet';
 import { Tag as TagIcon } from 'grommet-icons';
 
 const renderTag = (value: string) => {
   
-  const tagLink = "https://www.amazon.it/?k=" + encodeURI(value) + "&tag=" + process.env.GATSBY_AMAZON_TAG;
+  const tagLink = "https://www.amazon.it/?k=" + encodeURI(value) + "&tag=booksitalia-21;
   
     return (
     <Box
@@ -17,7 +17,7 @@ const renderTag = (value: string) => {
       margin="xxsmall"
     >
       <TagIcon color="text" style={{ width: '12px', height: '12px' }} />
-      <Text size="small"><a href={tagLink}>{value}</a></Text>
+      <Text size="small"><Anchor href={tagLink} label={value} /></Text>
     </Box>
   );
 };
