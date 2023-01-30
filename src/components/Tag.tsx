@@ -13,7 +13,7 @@ const renderTag = (value: string) => (
     margin="xxsmall"
   >
     <TagIcon color="text" style={{ width: '12px', height: '12px' }} />
-    <Text size="small">{value}</Text>
+    <Text size="small"><Anchor href="https://www.amazon.it/?k={encodeUri(value)}&tag={process.env.AMAZON_TAG}" label="{value}" /></Text>
   </Box>
 );
 
